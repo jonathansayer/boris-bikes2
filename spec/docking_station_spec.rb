@@ -12,14 +12,19 @@ describe DockingStation do
     expect(bike).to be_working
   end
 # end
+describe 'dock' do
+  it 'raises an error when it is full' do
+    20.times {subject.dock Bike.new}
+    bike = Bike.new
 
-
-  it { is_expected.to respond_to :capacity}
-
-  it 'returns 20' do
-    expect(subject.capacity).to eq 20
+    expect{subject.dock bike}.to raise_error 
+    'Docking station full'
   end
+end
 
+
+  
+ 
 
 
 # describe 'release_bike' do 
