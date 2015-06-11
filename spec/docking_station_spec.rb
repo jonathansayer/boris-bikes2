@@ -14,6 +14,14 @@ describe DockingStation do
 # end
 
 
+  it { is_expected.to respond_to :capacity}
+
+  it 'returns 20' do
+    expect(subject.capacity).to eq 20
+  end
+
+
+
 # describe 'release_bike' do 
 
   it 'raises an error when there are no bikes available' do
